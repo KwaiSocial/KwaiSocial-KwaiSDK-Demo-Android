@@ -1,0 +1,11 @@
+ext {
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.0",
+            applicationId    : "com.kwai.chat.demo",
+            minSdkVersion    : 19,
+            targetSdkVersion : 30,
+            javaSource       : "VERSION_1_8",
+            javaTarget       : "VERSION_1_8"
+    ]
+}

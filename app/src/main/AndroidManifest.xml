@@ -1,0 +1,55 @@
+<manifest
+  package="com.kwai.opensdk.demo"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <!-- token utils -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="com.yxcorp.gifshow.thirdparty.auth.read" />
+
+  <queries>
+    <package android:name="com.smile.gifmaker"/>
+    <package android:name="com.kuaishou.nebula"/>
+  </queries>
+
+  <application
+    android:name=".MyApplication"
+    android:allowBackup="false"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+    tools:replace="android:theme">
+
+    <activity android:name="com.kwai.opensdk.demo.MainEnterActivity"
+      android:screenOrientation="portrait">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <activity android:name="com.kwai.opensdk.demo.TabMainActivity"
+        android:screenOrientation="portrait"
+      android:launchMode="singleTask">
+    </activity>
+
+    <activity android:name="com.kwai.opensdk.demo.HistoryOpenIdActivity"
+        android:screenOrientation="portrait">
+    </activity>
+
+    <provider
+      android:name="androidx.core.content.FileProvider"
+      android:authorities="${applicationId}.fileprovider"
+      android:exported="false"
+      android:grantUriPermissions="true" >
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+    </provider>
+
+  </application>
+
+</manifest>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context="com.kwai.opensdk.demo.PostShareFragment">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+          <CheckBox
+            android:id="@+id/kwai_app_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="主站" />
+
+          <CheckBox
+            android:id="@+id/nebula_app_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="极速版" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="平台选择: " />
+
+          <TextView
+            android:id="@+id/login_platform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            tools:text="kwai_app;nebula_app" />
+        </LinearLayout>
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+          <CheckBox
+            android:id="@+id/new_task_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="newTaskFlag" />
+
+          <CheckBox
+            android:id="@+id/clear_task_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="clearTaskFlag" />
+          <CheckBox
+            android:id="@+id/show_default_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="showLoading" />
+        </LinearLayout>
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:orientation="horizontal">
+          <CheckBox
+            android:id="@+id/go_marget_app_not_install"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="goMargetAppNotInstall" />
+
+          <CheckBox
+            android:id="@+id/go_marget_version_not_support"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="goMargetVersionNotSupport" />
+        </LinearLayout>
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:orientation="horizontal">
+          <CheckBox
+            android:id="@+id/use_app_private_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="useAppPrivateFile" />
+        </LinearLayout>
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/tag_list"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+          <Button
+            android:id="@+id/tag_input"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="1.    添加标签" />
+
+          <Button
+            android:id="@+id/tag_clear"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="清除tag" />
+        </LinearLayout>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:layout_marginTop="10dp"
+          android:text="2.   额外参数配置，根据业务可选" />
+
+        <EditText
+          android:id="@+id/extra_info"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:hint="(1)输入透传的额外参数extraInfo" />
+
+        <EditText
+          android:id="@+id/media_map_info"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:hint="(2)业务参数mediaInfoMap（传入格式key1:value1;key2:value2）" />
+
+        <EditText
+          android:id="@+id/third_app_info"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:hint="(3)第三方埋点数据额外参数thirdExtraInfo" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:background="#dddddd"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="2dp">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textSize="16sp"
+          android:textColor="@color/black"
+          android:text="分享到发布页时直接挂载小程序PLC"/>
+
+        <EditText
+          android:id="@+id/post_plc_mp_app_id"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:hint="小程序AppId" />
+
+        <EditText
+          android:id="@+id/post_plc_mp_title"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:hint="小程序PLC标题" />
+
+        <EditText
+          android:id="@+id/post_plc_mp_path"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:hint="小程序页面路径" />
+
+      </LinearLayout>
+
+      <CheckBox
+        android:id="@+id/disableFallBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="3.   设置不接受fallback" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="4. 在以下三种分享方式中任选一项"></TextView>
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="#ff8000"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:gravity="center_horizontal"
+          android:orientation="horizontal">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="goto"></TextView>
+
+          <Spinner
+            android:id="@+id/picSpinnerSharePage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/pic_share_page" />
+
+        </LinearLayout>
+
+        <TextView
+          android:id="@+id/pic_path"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:textColor="#ffffff" />
+
+        <Button
+          android:id="@+id/select_pic"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:text="选择并发布图片" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="#ff8000"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:gravity="center_horizontal"
+          android:orientation="horizontal">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="goto"></TextView>
+
+          <Spinner
+            android:id="@+id/spinner_share_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/video_share_page" />
+
+        </LinearLayout>
+
+        <TextView
+          android:id="@+id/cover_path"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:gravity="center"
+          android:textColor="#ffffff" />
+
+        <Button
+          android:id="@+id/cover_pic"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="选择封面图片" />
+
+        <TextView
+          android:id="@+id/video_path"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:gravity="center" />
+
+        <Button
+          android:id="@+id/select_video"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:text="选择单个视频并发布" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:background="#ff8000"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/multi_media_desc"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+        <Button
+          android:id="@+id/multi_select_video"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:text="增加多段视频" />
+
+        <Button
+          android:id="@+id/multi_select_pic"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:text="增加多张图片" />
+
+        <Button
+          android:id="@+id/clip_multi_media"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:text="多图和视频裁剪" />
+
+        <Button
+          android:id="@+id/publish_ai_cut_video"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:text="发布智能裁剪视频" />
+
+        <Button
+          android:id="@+id/edit_multi_picture"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:text="编辑多张图片" />
+
+        <Button
+          android:id="@+id/multi_media_clear"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:text="清除所选图片和视频" />
+      </LinearLayout>
+
+       <TextView
+         android:id="@+id/callback_tips"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center_horizontal"
+         android:layout_marginTop="20dp"
+         android:layout_marginBottom="20dp"
+         android:paddingLeft="15dp"
+         android:paddingRight="15dp"
+         android:textSize="17dp"
+         android:textStyle="bold"
+         android:text="callback result" />
+    </LinearLayout>
+  </ScrollView>
+</FrameLayout>
